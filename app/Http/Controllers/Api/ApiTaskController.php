@@ -39,7 +39,7 @@ class ApiTaskController extends CoreApiController
      */
     public function list(Request $request)
     {
-        $models = $this->repository->datatableListSubQuery();
+        $models = Task::query();
 
 
         $result = DataTables::eloquent($models)

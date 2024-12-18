@@ -39,7 +39,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|Task withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|Task withoutTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder byUser()
- * @method static \Illuminate\Database\Eloquent\Builder datatableListSubQuery()
  * @mixin Eloquent
  *
  * @property User $user

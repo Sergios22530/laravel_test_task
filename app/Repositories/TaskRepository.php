@@ -24,14 +24,6 @@ class TaskRepository extends CoreRepository implements ResourceRepositoryInterfa
     }
 
     /**
-     * @return mixed
-     */
-    public function datatableListSubQuery() : TaskQueryBuilder
-    {
-        return $this->startConditions()::datatableListSubQuery();
-    }
-
-    /**
      * @param $id
      * @return mixed
      */

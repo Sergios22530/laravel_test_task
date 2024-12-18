@@ -19,9 +19,4 @@ class TaskQueryBuilder extends CoreQueryBuilder
     {
         return $this->where('user_id', $userId ?: Auth::user()?->id);
     }
-
-    public function datatableListSubQuery() : TaskQueryBuilder
-    {
-        return $this->byUser();
-    }
 }

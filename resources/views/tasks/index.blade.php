@@ -77,7 +77,6 @@
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
 
             <script src="{{ asset(mix('js/scripts/tables/task-datatable.js')) }}"></script>
-            <script src="{{ asset(mix('js/scripts/task-index.js')) }}"></script>
             <script src="{{ asset(mix('js/scripts/task-form.js')) }}"></script>
 @endsection
 
