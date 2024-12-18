@@ -1,0 +1,8 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/js/scripts/async/request.js": "/js/scripts/async/request.js",
+    "/js/scripts/tables/task-datatable.js": "/js/scripts/tables/task-datatable.js",
+    "/js/scripts/task-form.js": "/js/scripts/task-form.js",
+    "/js/scripts/task-index.js": "/js/scripts/task-index.js"
+}
