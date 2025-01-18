@@ -1,0 +1,49 @@
+services:
+    web:
+        image: nginx:latest
+        volumes:
+            - ./:/var/www/
+            - ./_docker/nginx/conf.d/:/etc/nginx/conf.d/
+        ports:
+            - "8876:80"
+        depends_on:
+            - app
+        container_name: app_nginx
+
+    app:
+        build:
+            context: .
+            dockerfile: _docker/app/Dockerfile
+        volumes:
+            - ./:/var/www
+        depends_on:
+            -   db
+        container_name: app
+    db:
+        image: mysql:latest
+        restart: always
+        volumes:
+            - ./tmp/db:/var/lib/mysql
+        environment:
+            MYSQL_DATABASE: laravel_test
+#            MYSQL_USER: root
+            MYSQL_ROOT_PASSWORD: root
+            MYSQLD_ARGS: --character-set-server=utf8 --collation-server=utf8_unicode_ci
+        ports:
+            - "8101:3306"
+#        command:
+#            - mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+        container_name: db
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        restart: always
+        ports:
+            - "8080:80"
+        environment:
+            PMA_HOST: db
+            PMA_USER: root
+            PMA_PASSWORD: root
+        depends_on:
+            - db
+        container_name: phpmyadmin
